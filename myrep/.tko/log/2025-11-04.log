@@ -1,0 +1,27 @@
+2025-11-04 08:55:09, MOVE, v:1, k:poo@pula-pula, mode:PICK
+2025-11-04 08:55:10, EXEC, v:1, k:poo@pula-pula, mode:FULL, rate:0, size:75
+2025-11-04 08:56:47, EXEC, v:1, k:poo@pula-pula, mode:FULL, rate:0, size:75
+2025-11-04 08:57:22, EXEC, v:1, k:poo@pula-pula, mode:FULL, rate:0, size:75
+2025-11-04 09:00:44, EXEC, v:1, k:poo@pula-pula, mode:FULL, rate:20, size:77
+2025-11-04 09:05:48, EXEC, v:1, k:poo@pula-pula, mode:FULL, rate:20, size:77
+2025-11-04 09:06:44, EXEC, v:1, k:poo@pula-pula, mode:FULL, rate:70, size:77
+2025-11-04 09:07:19, EXEC, v:1, k:poo@pula-pula, mode:FULL, rate:90, size:75
+2025-11-04 09:08:31, EXEC, v:1, k:poo@pula-pula, mode:FULL, rate:90, size:75
+2025-11-04 09:08:48, EXEC, v:1, k:poo@pula-pula, mode:FULL, rate:100, size:75
+2025-11-04 09:08:54, MOVE, v:1, k:poo@pula-pula, mode:BACK
+2025-11-04 09:09:43, SELF, v:1, k:poo@pula-pula, rate:100, iagen:sim_erro_de_digitao_que_nao_estva_achando, guide:sim_para_usar_o_insert, alone:8, study:70
+2025-11-04 15:53:41, MOVE, v:1, k:poo@lapiseira, mode:DOWN
+2025-11-04 15:53:44, MOVE, v:1, k:poo@lapiseira, mode:PICK
+2025-11-04 15:53:49, EXEC, v:1, k:poo@lapiseira, mode:FULL, rate:0, size:0
+2025-11-04 15:53:50, MOVE, v:1, k:poo@lapiseira, mode:BACK
+2025-11-04 16:14:39, MOVE, v:1, k:poo@lapiseira, mode:PICK
+2025-11-04 16:14:44, EXEC, v:1, k:poo@lapiseira, mode:FULL, rate:0
+2025-11-04 16:14:45, MOVE, v:1, k:poo@lapiseira, mode:BACK
+2025-11-04 16:19:28, MOVE, v:1, k:poo@lapiseira, mode:PICK
+2025-11-04 16:19:30, MOVE, v:1, k:poo@lapiseira, mode:BACK
+2025-11-04 16:19:39, MOVE, v:1, k:poo@lapiseira, mode:PICK
+2025-11-04 16:19:44, EXEC, v:1, k:poo@lapiseira, mode:FULL, rate:0
+2025-11-04 16:19:56, MOVE, v:1, k:poo@lapiseira, mode:BACK
+2025-11-04 16:31:08, MOVE, v:1, k:poo@lapiseira, mode:PICK
+2025-11-04 16:31:13, EXEC, v:1, k:poo@lapiseira, mode:FULL, rate:0
+2025-11-04 16:31:14, MOVE, v:1, k:poo@lapiseira, mode:BACK

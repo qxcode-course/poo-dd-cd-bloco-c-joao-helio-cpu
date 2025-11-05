@@ -1,0 +1,35 @@
+version: '0.2'
+sources:
+- database: local
+  link: ''
+  type: local
+  branch: master
+  cache_path: ''
+  cache_timestamp: ''
+  filters: null
+- database: poo
+  link: C:\Users\João Hélio\Documents\Bloco C Git\poo-dd-cd-bloco-c-joao-helio-cpu\myrep\.tko\cache\poo\Readme.md
+  type: clone
+  branch: master
+  cache_path: C:\Users\João Hélio\Documents\Bloco C Git\poo-dd-cd-bloco-c-joao-helio-cpu\myrep\.tko\cache\poo\Readme.md
+  cache_timestamp: '2025-11-05 20:08:34'
+  filters:
+  - listas
+expanded:
+- poo@campanha-principal
+- poo@bloco_c-listas
+tasks:
+  poo@budega: '{rate:100, iagen:sim__muito_erro_q_n_sabia, guide:o_video_da_aula,
+    alone:7, study:180}'
+  poo@lapiseira: '{rate:100, iagen:muito_erros_de_escrita_e_variaveis_diferentes,
+    guide:aulas_sobre_array, alone:8, study:240}'
+  poo@pula-pula: '{rate:100, iagen:sim_erro_de_digitao_que_nao_estva_achando, guide:sim_para_usar_o_insert,
+    alone:8, study:70}'
+flags:
+  quests: 0
+  tracks: 0
+  tasks: 0
+  graph: 1
+  xray: 0
+lang: py
+selected: poo@cinema
