@@ -32,7 +32,7 @@ class Espaco:
 class Maquina:
     def __init__(self, capacidade: int):
         self.capacidade: int = capacidade
-        self.slot: list[Espaco] = []
+        self.slot: list[Espaco | None] = []
         self.saldo: float = 0
 
         for _ in range(capacidade):
@@ -41,6 +41,10 @@ class Maquina:
     def getSaldo(self):
         return self.saldo
 
+    def setSaldo(self, valor: int):
+        self.saldo += valor
+        return
+
     def setSlot(self, indice: int, nome: str, qtd: int, preco: float):
         if indice < 0 or indice > self.capacidade:
             print("fail: indice nao existe")
@@ -48,6 +52,43 @@ class Maquina:
         self.slot[indice].setNome(nome)
         self.slot[indice].setQtd(qtd)
         self.slot[indice].setPreco(preco)
+
+    def limpar(self, indice: int):
+        if indice < 0 or indice > self.capacidade:
+            print("fail: indice nao existe")
+            return
+        n: str = "empty"
+        self.slot[indice].setNome(n)
+        self.slot[indice].setQtd(0)
+        self.slot[indice].setPreco(0)
+
+    def pedirTroco(self):
+        troco = self.saldo
+        self.saldo = 0
+        print(f"voce recebeu{troco: .2f} RS")
+        return troco
+
+    def comprar(self, ind: int):
+        if ind < 0 or ind > self.capacidade:
+            print("fail: indice nao existe")
+            return
+
+        s = self.slot[ind]
+
+        if self.slot[ind] is None:
+            print("fail: espiral sem produtos")
+            return
+
+        if self.saldo < s.getPreco():
+            print("fail: saldo insuficiente")
+            return
+
+        if s.getQtd() <= 0:
+            print("fail: espiral sem produtos")
+            return
+        s.setQtd(s.getQtd() - 1)
+        self.saldo -= s.getPreco()
+        print(f"voce comprou um {s.getNome()}")
 
     def __str__(self):
         saida = f"saldo:{self.getSaldo(): .2f}\n"
@@ -76,6 +117,17 @@ def main():
             qtd = int(args[3])
             preco = float(args[4])
             maquina.setSlot(indice, nome, qtd, preco)
+        if args[0] == "limpar":
+            ind = int(args[1])
+            maquina.limpar(ind)
+        if args[0] == "dinheiro":
+            valor = int(args[1])
+            maquina.setSaldo(valor)
+        if args[0] == "troco":
+            maquina.pedirTroco()
+        if args[0] == "comprar":
+            ind = int(args[1])
+            maquina.comprar(ind)
 
 
 main()

@@ -222,8 +222,98 @@
         },
         {
             "label": "2025-11-14_09-22-17",
-            "content": "class Espaco:\n    def __init__(self):\n        self.__nome: str = \"empty\"\n        self.__qtd: int = 0\n        self.__preco: float = 0.0\n\n    def getNome(self):\n        return self.__nome  # Retorna o nome\n\n    def setNome(self, n: str):\n        self.__nome = n  # Colocar o nome\n        return self.__nome\n\n    def getQtd(self):\n        return self.__qtd  # retorna Quantidade\n\n    def setQtd(self, q: int):\n        self.__qtd = q\n        return self.__qtd\n\n    def getPreco(self):\n        return self.__preco  # retorna pre\u00e7o\n\n    def setPreco(self, p: int):\n        self.__preco = p\n        return self.__preco\n\n    def __str__(self):\n        return f\"[ {self.getNome():>7} : {self.getQtd()} U : {self.getPreco():.2f} RS]\"\n\n\nclass Maquina:\n    def __init__(self, capacidade: int):\n        self.capacidade: int = capacidade\n        self.slot: list[Espaco] = []\n        self.saldo: float = 0\n\n        for _ in range(capacidade):\n            self.slot.append(Espaco())\n\n    def getSaldo(self):\n        return self.saldo\n\n    def setSlot(self, indice: int, nome: str, qtd: int, preco: float):\n        if indice < 0 or indice > self.capacidade:\n            print(\"fail: indice nao existe\")\n            return\n        self.slot[indice].setNome(nome)\n        self.slot[indice].setQtd(qtd)\n        self.slot[indice].setPreco(preco)\n\n    def __str__(self):\n        saida = f\"saldo:{self.getSaldo(): .2f}\\n\"\n        for i, s in enumerate(self.slot):\n            saida += f\"{i} {s}\\n\"\n        return saida.strip()\n\n\ndef main():\n    maquina: Maquina | None = None\n    while True:\n        line = input()\n        print(\"$\" + line)\n        args = line.split(\" \")\n\n        if args[0] == \"end\":\n            break\n        if args[0] == \"init\":\n            c = int(args[1])\n            maquina = Maquina(c)\n        if args[0] == \"show\":\n            print(maquina)\n        if args[0] == \"set\":\n            indice = int(args[1])\n            nome = str(args[2])\n            qtd = int(args[3])\n            preco = float(args[4])\n            maquina.setSlot(indice, nome, qtd, preco)\n\n\nmain()\n",
+            "content": "@@ -1323,223 +1323,8 @@\n o)%0A%0A\n-    def limpar(self, indice: int):%0A        slot = self.slot%5Bindice%5D%0A        if indice %3C 0 or indice %3E self.capacidade:%0A            print(%22fail: indice nao existe%22)%0A            return%0A        self.slot%5Bslot%5D = None%0A%0A\n     \n@@ -2058,103 +2058,8 @@\n co)%0A\n-        if args%5B0%5D == %22limpar%22:%0A            ind = int(args%5B1%5D)%0A            maquina.limpar(ind)%0A\n %0A%0Ama\n",
             "lines": "81"
+        },
+        {
+            "label": "2025-11-14_09-32-31",
+            "content": "@@ -1363,16 +1363,19 @@\n        s\n+lot\n  = self.\n@@ -1521,16 +1521,19 @@\n f.slot%5Bs\n+lot\n %5D = None\n",
+            "lines": "91"
+        },
+        {
+            "label": "2025-11-14_09-35-08",
+            "content": "@@ -1346,32 +1346,62 @@\n , indice: int):%0A\n+        s = self.slot%5Bindice%5D%0A\n         if indic\n@@ -1517,22 +1517,17 @@\n lf.slot%5B\n-indice\n+s\n %5D = None\n",
+            "lines": "91"
+        },
+        {
+            "label": "2025-11-14_09-36-55",
+            "content": "@@ -847,23 +847,16 @@\n t%5BEspaco\n- %7C None\n %5D = %5B%5D%0A \n",
+            "lines": "90"
+        },
+        {
+            "label": "2025-11-14_09-38-06",
+            "content": "@@ -1512,125 +1512,8 @@\n None\n-%0A        self.slot%5Bindice%5D.setNome(%22empty%22)%0A        self.slot%5Bindice%5D.setQtd(0)%0A        self.slot%5Bindice%5D.setPreco(0)\n %0A%0A  \n",
+            "lines": "90"
+        },
+        {
+            "label": "2025-11-14_09-39-01",
+            "content": "@@ -1480,33 +1480,8 @@\n urn%0A\n-        n: str = %22empty%22%0A\n     \n@@ -1543,17 +1543,23 @@\n setNome(\n-n\n+%22empty%22\n )%0A      \n",
+            "lines": "93"
+        },
+        {
+            "label": "2025-11-14_09-39-41",
+            "content": "@@ -1493,32 +1493,65 @@\n : str = %22empty%22%0A\n+        self.slot%5Bindice%5D = None%0A\n         self.slo\n",
+            "lines": "94"
+        },
+        {
+            "label": "2025-11-14_09-40-20",
+            "content": "@@ -1023,88 +1023,8 @@\n do%0A%0A\n-    def setSaldo(self, valor: int):%0A        self.saldo += valor%0A        return%0A%0A\n     \n@@ -2447,111 +2447,8 @@\n nd)%0A\n-        if args%5B0%5D == %22dinheiro%22:%0A            valor = int(args%5B1%5D)%0A            maquina.setSaldo(valor)%0A\n %0A%0Ama\n",
+            "lines": "93"
+        },
+        {
+            "label": "2025-11-14_09-42-49",
+            "content": "@@ -1697,127 +1697,8 @@\n 0)%0A%0A\n-    def pedirTroco(self):%0A        troco = self.saldo%0A        self.saldo = 0%0A        return f%22voce recebeu %7Btroco%7D RS%22%0A%0A\n     \n@@ -2630,72 +2630,8 @@\n or)%0A\n-        if args%5B0%5D == %22troco%22:%0A            maquina.pedirTroco()%0A\n %0A%0Ama\n",
+            "lines": "100"
+        },
+        {
+            "label": "2025-11-14_10-08-17",
+            "content": "@@ -2787,24 +2787,16 @@\n         \n- troco =\n  maquina\n",
+            "lines": "107"
+        },
+        {
+            "label": "2025-11-14_10-09-10",
+            "content": "@@ -1778,18 +1778,21 @@\n        r\n- =\n+eturn\n  f%22voce \n@@ -1814,25 +1814,8 @@\n  RS%22\n-%0A        return r\n %0A%0A  \n@@ -2779,32 +2779,40 @@\n co%22:%0A           \n+ troco =\n  maquina.pedirTr\n",
+            "lines": "107"
+        },
+        {
+            "label": "2025-11-14_10-10-16",
+            "content": "@@ -1777,22 +1777,20 @@\n         \n-print(\n+r = \n f%22voce r\n@@ -1807,17 +1807,16 @@\n oco%7D RS%22\n-)\n %0A       \n@@ -1823,21 +1823,17 @@\n  return \n-troco\n+r\n %0A%0A    de\n",
+            "lines": "108"
+        },
+        {
+            "label": "2025-11-14_10-11-35",
+            "content": "@@ -1804,21 +1804,16 @@\n u %7Btroco\n-: .2f\n %7D RS%22)%0A \n",
+            "lines": "108"
+        },
+        {
+            "label": "2025-11-14_10-12-27",
+            "content": "@@ -1797,16 +1797,17 @@\n  recebeu\n+ \n %7Btroco: \n",
+            "lines": "108"
+        },
+        {
+            "label": "2025-11-14_10-12-40",
+            "content": "@@ -1841,548 +1841,8 @@\n co%0A%0A\n-    def comprar(self, ind: int):%0A        if ind %3C 0 or ind %3E self.capacidade:%0A            print(%22fail: indice nao existe%22)%0A            return%0A%0A        s = self.slot%5Bind%5D%0A%0A        if self.slot%5Bind%5D is None:%0A            print(%22fail: espiral sem produtos%22)%0A            return%0A%0A        if self.saldo %3C s.getPreco():%0A            print(%22fail: saldo insuficiente%22)%0A            return%0A%0A        if s.getQtd %3C= 0:%0A            print(%22fail: espiral sem produtos%22)%0A            return%0A        s.setQtd(s.getQtd() - 1)%0A        self.saldo -= s.getPreco()%0A%0A\n     \n@@ -2838,105 +2838,8 @@\n o()%0A\n-        if args%5B0%5D == %22comprar%22:%0A            ind = int(args%5B1%5D)%0A            maquina.comprar(ind)%0A\n %0A%0Ama\n",
+            "lines": "108"
+        },
+        {
+            "label": "2025-11-14_10-24-19",
+            "content": "@@ -2234,18 +2234,16 @@\n s.getQtd\n-()\n  %3C= 0:%0A \n",
+            "lines": "132"
+        },
+        {
+            "label": "2025-11-14_10-24-57",
+            "content": "@@ -2381,53 +2381,8 @@\n co()\n-%0A        print(f%22voce comprou %7Bs.getNome()%7D%22)\n %0A%0A  \n",
+            "lines": "132"
+        },
+        {
+            "label": "2025-11-14_10-26-31",
+            "content": "@@ -2411,11 +2411,8 @@\n rou \n-um \n %7Bs.g\n",
+            "lines": "133"
+        },
+        {
+            "label": "2025-11-14_10-27-07",
+            "content": "class Espaco:\n    def __init__(self):\n        self.__nome: str = \"empty\"\n        self.__qtd: int = 0\n        self.__preco: float = 0.0\n\n    def getNome(self):\n        return self.__nome  # Retorna o nome\n\n    def setNome(self, n: str):\n        self.__nome = n  # Colocar o nome\n        return self.__nome\n\n    def getQtd(self):\n        return self.__qtd  # retorna Quantidade\n\n    def setQtd(self, q: int):\n        self.__qtd = q\n        return self.__qtd\n\n    def getPreco(self):\n        return self.__preco  # retorna pre\u00e7o\n\n    def setPreco(self, p: int):\n        self.__preco = p\n        return self.__preco\n\n    def __str__(self):\n        return f\"[ {self.getNome():>7} : {self.getQtd()} U : {self.getPreco():.2f} RS]\"\n\n\nclass Maquina:\n    def __init__(self, capacidade: int):\n        self.capacidade: int = capacidade\n        self.slot: list[Espaco | None] = []\n        self.saldo: float = 0\n\n        for _ in range(capacidade):\n            self.slot.append(Espaco())\n\n    def getSaldo(self):\n        return self.saldo\n\n    def setSaldo(self, valor: int):\n        self.saldo += valor\n        return\n\n    def setSlot(self, indice: int, nome: str, qtd: int, preco: float):\n        if indice < 0 or indice > self.capacidade:\n            print(\"fail: indice nao existe\")\n            return\n        self.slot[indice].setNome(nome)\n        self.slot[indice].setQtd(qtd)\n        self.slot[indice].setPreco(preco)\n\n    def limpar(self, indice: int):\n        if indice < 0 or indice > self.capacidade:\n            print(\"fail: indice nao existe\")\n            return\n        n: str = \"empty\"\n        self.slot[indice].setNome(n)\n        self.slot[indice].setQtd(0)\n        self.slot[indice].setPreco(0)\n\n    def pedirTroco(self):\n        troco = self.saldo\n        self.saldo = 0\n        print(f\"voce recebeu{troco: .2f} RS\")\n        return troco\n\n    def comprar(self, ind: int):\n        if ind < 0 or ind > self.capacidade:\n            print(\"fail: indice nao existe\")\n            return\n\n        s = self.slot[ind]\n\n        if self.slot[ind] is None:\n            print(\"fail: espiral sem produtos\")\n            return\n\n        if self.saldo < s.getPreco():\n            print(\"fail: saldo insuficiente\")\n            return\n\n        if s.getQtd() <= 0:\n            print(\"fail: espiral sem produtos\")\n            return\n        s.setQtd(s.getQtd() - 1)\n        self.saldo -= s.getPreco()\n        print(f\"voce comprou um {s.getNome()}\")\n\n    def __str__(self):\n        saida = f\"saldo:{self.getSaldo(): .2f}\\n\"\n        for i, s in enumerate(self.slot):\n            saida += f\"{i} {s}\\n\"\n        return saida.strip()\n\n\ndef main():\n    maquina: Maquina | None = None\n    while True:\n        line = input()\n        print(\"$\" + line)\n        args = line.split(\" \")\n\n        if args[0] == \"end\":\n            break\n        if args[0] == \"init\":\n            c = int(args[1])\n            maquina = Maquina(c)\n        if args[0] == \"show\":\n            print(maquina)\n        if args[0] == \"set\":\n            indice = int(args[1])\n            nome = str(args[2])\n            qtd = int(args[3])\n            preco = float(args[4])\n            maquina.setSlot(indice, nome, qtd, preco)\n        if args[0] == \"limpar\":\n            ind = int(args[1])\n            maquina.limpar(ind)\n        if args[0] == \"dinheiro\":\n            valor = int(args[1])\n            maquina.setSaldo(valor)\n        if args[0] == \"troco\":\n            maquina.pedirTroco()\n        if args[0] == \"comprar\":\n            ind = int(args[1])\n            maquina.comprar(ind)\n\n\nmain()\n",
+            "lines": "133"
         }
     ]
 }
