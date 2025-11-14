@@ -1,0 +1,229 @@
+{
+    "patches": [
+        {
+            "label": "2025-11-13_09-49-37",
+            "content": "@@ -1,763 +0,0 @@\n-class Espaco:%0A    def __init__(self):%0A        self.__nome: str = %22empty%22%0A        self.__qtd: int = 0%0A        self.__preco: float = 0.0%0A%0A    def getNome(self):%0A        return self.__nome  # Retorna o nome%0A%0A    def setNome(self, n: str):%0A        self.__nome = n  # Colocar o nome%0A        return self.__nome%0A%0A    def getQtd(self):%0A        return self.__qtd  # retorna Quantidade%0A%0A    def setQtd(self, q: int):%0A        self.__qtd = q%0A        return self.__qtd%0A%0A    def getPreco(self):%0A        return self.__preco  # retorna pre%C3%A7o%0A%0A    def setPreco(self, p: int):%0A        self.__preco = p%0A        return self.__preco%0A%0A    def __str__(self):%0A        return f%22%5B%7Bself.__nome%7D : %7Bself.__qtd%7D U : %7Bself.__preco%7D RS%5D%22%0A%0A%0Aclass Maquina:%0A    def __init__(self):%0A        return%0A\n",
+            "lines": "0"
+        },
+        {
+            "label": "2025-11-13_10-14-55",
+            "content": "@@ -742,274 +742,22 @@\n self\n-, capacidade: int):%0A        self.capacidade: int = capacidade%0A        self.slot: list%5BEspaco %7C None%5D = %5B%5D%0A%0A        for _ in range(capacidade):%0A            self.slot.append(None)%0A%0A    def __str__(self):%0A        return f%22%7Bself.slot%7D%22%0A%0A%0Amaquina = Maquina(2)%0Aprint(maquina)\n+):%0A        return\n %0A\n",
+            "lines": "34"
+        },
+        {
+            "label": "2025-11-13_10-39-45",
+            "content": "@@ -830,16 +830,23 @@\n t%5BEspaco\n+ %7C None\n %5D = %5B%5D%0A%0A\n@@ -910,22 +910,20 @@\n .append(\n-Espaco\n+None\n )%0A%0A    d\n",
+            "lines": "45"
+        },
+        {
+            "label": "2025-11-13_10-40-13",
+            "content": "@@ -652,58 +652,49 @@\n f%22%5B%7B\n-Espaco.getNome%7D : %7BEspaco.getQtd%7D U : %7BEspaco.getP\n+self.__nome%7D : %7Bself.__qtd%7D U : %7Bself.__p\n reco\n",
+            "lines": "45"
+        },
+        {
+            "label": "2025-11-13_10-41-35",
+            "content": "@@ -963,53 +963,11 @@\n urn \n-%22%5B%22 + %22 %22.join(str(c) if c else %22-%22 for c in \n+f%22%7B\n self\n@@ -975,14 +975,9 @@\n slot\n-) + %22%5D\n+%7D\n %22%0A%0A%0A\n",
+            "lines": "45"
+        },
+        {
+            "label": "2025-11-13_10-45-54",
+            "content": "@@ -922,10 +922,8 @@\n paco\n-()\n )%0A%0A \n@@ -963,11 +963,53 @@\n urn \n-f%22%7B\n+%22%5B%22 + %22 %22.join(str(c) if c else %22-%22 for c in \n self\n@@ -1013,17 +1013,22 @@\n elf.slot\n-%7D\n+) + %22%5D\n %22%0A%0A%0Amaqu\n",
+            "lines": "45"
+        },
+        {
+            "label": "2025-11-13_10-53-34",
+            "content": "@@ -662,18 +662,16 @@\n .getNome\n-()\n %7D : %7BEsp\n@@ -680,18 +680,16 @@\n o.getQtd\n-()\n %7D U : %7BE\n@@ -702,18 +702,16 @@\n getPreco\n-()\n %7D RS%5D%22%0A%0A\n",
+            "lines": "45"
+        },
+        {
+            "label": "2025-11-13_10-54-08",
+            "content": "@@ -971,33 +971,11 @@\n urn \n-%22 %22.join(str(s) for s in \n+f%22%7B\n self\n@@ -979,17 +979,18 @@\n elf.slot\n-)\n+%7D%22\n %0A%0A%0Amaqui\n",
+            "lines": "45"
+        },
+        {
+            "label": "2025-11-13_10-55-06",
+            "content": "@@ -648,20 +648,22 @@\n urn f%22%5B%7B\n-self\n+Espaco\n .getNome\n@@ -665,28 +665,30 @@\n tNome()%7D : %7B\n-self\n+Espaco\n .getQtd()%7D U\n@@ -691,20 +691,22 @@\n )%7D U : %7B\n-self\n+Espaco\n .getPrec\n",
+            "lines": "45"
+        },
+        {
+            "label": "2025-11-13_10-56-20",
+            "content": "@@ -1003,40 +1003,25 @@\n )%0A%0A%0A\n-def main():%0A    \n maquina\n-:\n+ =\n  Maquina\n  %7C N\n@@ -1020,264 +1020,23 @@\n uina\n- %7C None = None%0A    while True:%0A        line = input()%0A        print(%22$%22 + line)%0A        args = line.split(%22 %22)%0A%0A        if args%5B0%5D == %22end%22:%0A            break%0A        if args%5B0%5D == %22init%22:%0A            c = int(args%5B1%5D)%0A            maquina = Maquina(c)%0A%0A%0Amain(\n+(2)%0Aprint(maquina\n )%0A\n",
+            "lines": "45"
+        },
+        {
+            "label": "2025-11-13_11-02-33",
+            "content": "@@ -1286,65 +1286,8 @@\n (c)%0A\n-        if args%5B0%5D == %22show%22:%0A            print(maquina)%0A\n %0A%0Ama\n",
+            "lines": "58"
+        },
+        {
+            "label": "2025-11-13_11-03-30",
+            "content": "@@ -127,17 +127,16 @@\n at = 0.0\n-0\n %0A%0A    de\n",
+            "lines": "60"
+        },
+        {
+            "label": "2025-11-13_11-04-00",
+            "content": "@@ -967,10 +967,9 @@\n rn %22\n-%5Cn\n+ \n %22.jo\n",
+            "lines": "60"
+        },
+        {
+            "label": "2025-11-13_11-04-34",
+            "content": "@@ -648,19 +648,16 @@\n turn f%22%5B\n-   \n %7Bself.ge\n",
+            "lines": "60"
+        },
+        {
+            "label": "2025-11-13_11-04-55",
+            "content": "@@ -972,10 +972,8 @@\n  %22%5Cn\n- 1\n %22.jo\n",
+            "lines": "60"
+        },
+        {
+            "label": "2025-11-13_11-05-15",
+            "content": "@@ -970,11 +970,12 @@\n rn %22\n-1\n %5Cn\n+ 1\n %22.jo\n",
+            "lines": "60"
+        },
+        {
+            "label": "2025-11-13_11-05-26",
+            "content": "@@ -970,11 +970,11 @@\n rn %22\n+1\n %5Cn\n-0\n %22.jo\n",
+            "lines": "60"
+        },
+        {
+            "label": "2025-11-13_11-05-36",
+            "content": "@@ -969,17 +969,16 @@\n urn %22%5Cn0\n- \n %22.join(s\n",
+            "lines": "60"
+        },
+        {
+            "label": "2025-11-13_11-05-48",
+            "content": "@@ -968,16 +968,18 @@\n turn %22%5Cn\n+0 \n %22.join(s\n",
+            "lines": "60"
+        },
+        {
+            "label": "2025-11-13_11-06-04",
+            "content": "@@ -969,27 +969,9 @@\n urn \n-f%22%7Bself.capacidade%7D\n+%22\n %5Cn%22.\n",
+            "lines": "60"
+        },
+        {
+            "label": "2025-11-13_11-07-01",
+            "content": "@@ -127,16 +127,17 @@\n at = 0.0\n+0\n %0A%0A    de\n@@ -710,13 +710,8 @@\n co()\n-: .2f\n %7D RS\n@@ -962,73 +962,69 @@\n     \n-for i, s in enumerate(self.slot):%0A            return f%22%7Bi%7D %7Bs%7D%5Cn%22\n+return f%22%7Bself.capacidade%7D%5Cn%22.join(str(s) for s in self.slot)\n %0A%0A%0Ad\n",
+            "lines": "60"
+        },
+        {
+            "label": "2025-11-13_11-12-19",
+            "content": "@@ -706,16 +706,17 @@\n Preco():\n+ \n .2f%7D RS%5D\n",
+            "lines": "61"
+        },
+        {
+            "label": "2025-11-13_11-12-54",
+            "content": "@@ -957,41 +957,8 @@\n f):%0A\n-        saida = f%22saldo: 0.00%5Cn%22%0A\n     \n@@ -1011,16 +1011,14 @@\n     \n-saida +=\n+return\n  f%22%7B\n@@ -1031,37 +1031,8 @@\n %5Cn%22%0A\n-        return saida.strip()%0A\n %0A%0Ade\n",
+            "lines": "61"
+        },
+        {
+            "label": "2025-11-13_11-14-15",
+            "content": "@@ -1040,22 +1040,24 @@\n         \n-return\n+saida +=\n  f%22%7Bi%7D %7B\n@@ -1062,16 +1062,45 @@\n  %7Bs%7D%5Cn%22%0A\n+        return saida.strip()%0A\n %0A%0Adef ma\n",
+            "lines": "63"
+        },
+        {
+            "label": "2025-11-13_11-14-41",
+            "content": "@@ -945,32 +945,65 @@\n  __str__(self):%0A\n+        saida = f%22saldo: 0.00%5Cn%22%0A\n         for i, s\n@@ -1040,23 +1040,22 @@\n         \n-saida =\n+return\n  f%22%7Bi%7D %7B\n@@ -1064,29 +1064,8 @@\n %5Cn%22%0A\n-        return saida%0A\n %0A%0Ade\n",
+            "lines": "62"
+        },
+        {
+            "label": "2025-11-13_11-16-37",
+            "content": "@@ -1040,20 +1040,20 @@\n     \n-print(\n+return \n saida\n-)\n %0A%0A%0Ad\n",
+            "lines": "62"
+        },
+        {
+            "label": "2025-11-13_11-17-53",
+            "content": "@@ -1013,17 +1013,16 @@\n   saida \n-+\n = f%22%7Bi%7D \n@@ -1040,20 +1040,20 @@\n     \n-return \n+print(\n saida\n+)\n %0A%0A%0Ad\n",
+            "lines": "62"
+        },
+        {
+            "label": "2025-11-13_11-18-52",
+            "content": "@@ -957,27 +957,8 @@\n f):%0A\n-        saida = %22%22%0A\n     \n",
+            "lines": "62"
+        },
+        {
+            "label": "2025-11-13_11-19-06",
+            "content": "@@ -856,40 +856,8 @@\n = %5B%5D\n-%0A        self.saldo: float = 0.0\n %0A%0A  \n@@ -973,22 +973,9 @@\n a = \n-f%22%7Bself.saldo%7D\n+%22\n %22%0A  \n",
+            "lines": "63"
+        },
+        {
+            "label": "2025-11-14_08-57-46",
+            "content": "@@ -1003,23 +1003,16 @@\n ida = f%22\n-saldo: \n %7Bself.sa\n@@ -1015,18 +1015,16 @@\n f.saldo%7D\n-%5Cn\n %22%0A      \n",
+            "lines": "64"
+        },
+        {
+            "label": "2025-11-14_08-58-09",
+            "content": "@@ -1126,16 +1126,8 @@\n aida\n-.split()\n %0A%0A%0Ad\n",
+            "lines": "64"
+        },
+        {
+            "label": "2025-11-14_08-58-20",
+            "content": "@@ -1128,16 +1128,18 @@\n da.split\n+()\n %0A%0A%0Adef m\n",
+            "lines": "64"
+        },
+        {
+            "label": "2025-11-14_08-59-36",
+            "content": "@@ -1128,14 +1128,12 @@\n da.s\n-trip()\n+plit\n %0A%0A%0Ad\n",
+            "lines": "64"
+        },
+        {
+            "label": "2025-11-14_09-00-03",
+            "content": "@@ -882,16 +882,18 @@\n loat = 0\n+.0\n %0A%0A      \n",
+            "lines": "64"
+        },
+        {
+            "label": "2025-11-14_09-00-26",
+            "content": "@@ -886,11 +886,8 @@\n  = 0\n-.00\n %0A%0A  \n",
+            "lines": "64"
+        },
+        {
+            "label": "2025-11-14_09-01-02",
+            "content": "@@ -882,16 +882,19 @@\n loat = 0\n+.00\n %0A%0A      \n@@ -967,59 +967,8 @@\n ))%0A%0A\n-    def getSaldo(self):%0A        return self.saldo%0A%0A\n     \n@@ -1021,22 +1021,13 @@\n elf.\n-getSaldo(): 2f\n+saldo\n %7D%5Cn%22\n",
+            "lines": "64"
+        },
+        {
+            "label": "2025-11-14_09-03-17",
+            "content": "@@ -1075,16 +1075,20 @@\n tSaldo()\n+: 2f\n %7D%5Cn%22%0A   \n",
+            "lines": "67"
+        },
+        {
+            "label": "2025-11-14_09-03-43",
+            "content": "@@ -1079,12 +1079,8 @@\n do()\n-: 1f\n %7D%5Cn%22\n",
+            "lines": "67"
+        },
+        {
+            "label": "2025-11-14_09-03-59",
+            "content": "@@ -1077,18 +1077,17 @@\n aldo(): \n-.2\n+1\n f%7D%5Cn%22%0A  \n",
+            "lines": "67"
+        },
+        {
+            "label": "2025-11-14_09-06-42",
+            "content": "@@ -1058,16 +1058,17 @@\n f%22saldo:\n+ \n %7Bself.ge\n",
+            "lines": "67"
+        },
+        {
+            "label": "2025-11-14_09-06-52",
+            "content": "@@ -1015,315 +1015,8 @@\n do%0A%0A\n-    def setSlot(self, indice: int, nome: str, qtd: int, preco: float):%0A        if indice %3C 0 or indice %3E self.capacidade:%0A            print(%22fail: indice nao existe%22)%0A            return%0A        self.slot%5Bindice%5D.setNome(nome)%0A        self.slot%5Bindice%5D.setQtd(qtd)%0A        self.slot%5Bindice%5D.setPreco(preco)%0A%0A\n     \n@@ -1535,223 +1535,8 @@\n na)%0A\n-        if args%5B0%5D == %22set%22:%0A            indice = int(args%5B1%5D)%0A            nome = str(args%5B2%5D)%0A            qtd = int(args%5B3%5D)%0A            preco = float(args%5B4%5D)%0A            maquina.setSlot(indice, nome, qtd, preco)%0A\n %0A%0Ama\n",
+            "lines": "67"
+        },
+        {
+            "label": "2025-11-14_09-16-33",
+            "content": "@@ -647,16 +647,19 @@\n turn f%22%5B\n+   \n %7Bself.ge\n@@ -669,11 +669,8 @@\n me()\n-:%3C7\n %7D : \n",
+            "lines": "81"
+        },
+        {
+            "label": "2025-11-14_09-19-35",
+            "content": "@@ -647,17 +647,16 @@\n turn f%22%5B\n- \n %7Bself.ge\n",
+            "lines": "81"
+        },
+        {
+            "label": "2025-11-14_09-20-49",
+            "content": "@@ -664,17 +664,17 @@\n tNome():\n-%3E\n+%3C\n 7%7D : %7Bse\n",
+            "lines": "81"
+        },
+        {
+            "label": "2025-11-14_09-22-17",
+            "content": "class Espaco:\n    def __init__(self):\n        self.__nome: str = \"empty\"\n        self.__qtd: int = 0\n        self.__preco: float = 0.0\n\n    def getNome(self):\n        return self.__nome  # Retorna o nome\n\n    def setNome(self, n: str):\n        self.__nome = n  # Colocar o nome\n        return self.__nome\n\n    def getQtd(self):\n        return self.__qtd  # retorna Quantidade\n\n    def setQtd(self, q: int):\n        self.__qtd = q\n        return self.__qtd\n\n    def getPreco(self):\n        return self.__preco  # retorna pre\u00e7o\n\n    def setPreco(self, p: int):\n        self.__preco = p\n        return self.__preco\n\n    def __str__(self):\n        return f\"[ {self.getNome():>7} : {self.getQtd()} U : {self.getPreco():.2f} RS]\"\n\n\nclass Maquina:\n    def __init__(self, capacidade: int):\n        self.capacidade: int = capacidade\n        self.slot: list[Espaco] = []\n        self.saldo: float = 0\n\n        for _ in range(capacidade):\n            self.slot.append(Espaco())\n\n    def getSaldo(self):\n        return self.saldo\n\n    def setSlot(self, indice: int, nome: str, qtd: int, preco: float):\n        if indice < 0 or indice > self.capacidade:\n            print(\"fail: indice nao existe\")\n            return\n        self.slot[indice].setNome(nome)\n        self.slot[indice].setQtd(qtd)\n        self.slot[indice].setPreco(preco)\n\n    def __str__(self):\n        saida = f\"saldo:{self.getSaldo(): .2f}\\n\"\n        for i, s in enumerate(self.slot):\n            saida += f\"{i} {s}\\n\"\n        return saida.strip()\n\n\ndef main():\n    maquina: Maquina | None = None\n    while True:\n        line = input()\n        print(\"$\" + line)\n        args = line.split(\" \")\n\n        if args[0] == \"end\":\n            break\n        if args[0] == \"init\":\n            c = int(args[1])\n            maquina = Maquina(c)\n        if args[0] == \"show\":\n            print(maquina)\n        if args[0] == \"set\":\n            indice = int(args[1])\n            nome = str(args[2])\n            qtd = int(args[3])\n            preco = float(args[4])\n            maquina.setSlot(indice, nome, qtd, preco)\n\n\nmain()\n",
+            "lines": "81"
+        }
+    ]
+}

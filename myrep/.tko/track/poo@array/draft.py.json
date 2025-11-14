@@ -1,0 +1,19 @@
+{
+    "patches": [
+        {
+            "label": "2025-11-11_16-01-27",
+            "content": "@@ -1,165 +0,0 @@\n-class Test:%0A    def __init__(self, x: int):%0A        self.x: int = x%0A%0A    def __str__(self):%0A        return f%22O valor de x %C3%A9: %7Bself.x%7D%22%0A%0A%0Alista_vazia: list%5Bint%5D = %5B%5D%0A\n",
+            "lines": "0"
+        },
+        {
+            "label": "2025-11-11_16-07-31",
+            "content": "@@ -128,8 +128,38 @@\n elf.x%7D%22%0A\n+%0A%0Alista_vazia: list%5Bint%5D = %5B%5D%0A\n",
+            "lines": "9"
+        },
+        {
+            "label": "2025-11-11_16-25-25",
+            "content": "class Test:\n    def __init__(self, x: int):\n        self.x: int = x\n\n    def __str__(self):\n        return f\"O valor de x \u00e9: {self.x}\"\n",
+            "lines": "6"
+        }
+    ]
+}

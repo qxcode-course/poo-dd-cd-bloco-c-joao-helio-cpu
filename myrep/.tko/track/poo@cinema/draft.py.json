@@ -1,0 +1,144 @@
+{
+    "patches": [
+        {
+            "label": "2025-11-06_10-14-56",
+            "content": "@@ -1,692 +0,0 @@\n-class Cliente:%0A    def __init__(self, id: str, telefone: int):%0A        self.id: str = id%0A        self.telefone: int = telefone%0A%0A    def __str__(self):%0A        return f%22%7Bself.id%7D:%7Bself.telefone%7D%22%0A%0A%0Aclass Sala:%0A    def __init__(self, capacidade: int):%0A        self.capacidade: int = capacidade%0A        self.assentos: list%5BCliente %7C None%5D = %5B%5D%0A%0A    def reservar(self, id: str, telefone: int, index: int) -%3E bool:%0A        return%0A%0A    def cancelar(id: str) -%3E bool:%0A        return%0A%0A    def getAssentos(self):%0A        c = self.assentos%0A        return c%0A%0A    def __str__(self):%0A        assento = (%22-----%22 if x is None else str(x) for x in self.assentos)%0A        return f%22%7Bassento%7D%22%0A%0A%0Asala = Sala(1)%0A\n",
+            "lines": "0"
+        },
+        {
+            "label": "2025-11-06_10-50-37",
+            "content": "@@ -1,696 +1,34 @@\n-class Cliente:%0A    def __init__(self, id: str, telefone: int):%0A        self.id: str = id%0A        self.telefone: int = telefone%0A%0A    def __str__(self):%0A        return f%22%7Bself.id%7D:%7Bself.telefone%7D%22%0A%0A%0Aclass Sala:%0A    def __init__(self, capacidade: int):%0A        self.capacidade: int = capacidade%0A        self.assentos: list%5BCliente %7C None%5D = %5B%5D%0A%0A    def reservar(self, id: str, telefone: int, index: int) -%3E bool:%0A        return%0A%0A    def cancelar(id: str) -%3E bool:%0A        return%0A%0A    def getAssentos(self):%0A        c = self.assentos%0A        return c%0A%0A    def __str__(self):%0A        assento = (%22-----%22 if x is None else str(x) for x in self.assentos)%0A        return f%22%7Bassento%7D%22%0A%0A%0Asala = Sala(1)%0A\n+@@ -689,16 +689,4 @@%0A (1)%250A%0A-\n prin\n@@ -34,9 +34,12 @@\n nt(sala)\n+%250A\n %0A\n",
+            "lines": "3"
+        },
+        {
+            "label": "2025-11-06_10-57-41",
+            "content": "@@ -336,121 +336,297 @@\n  = %5B\n-None for _ in range(capacidade)%5D%0A%0A    def __str__(self):%0A        return %22%5B%22 + %22 %22.join(str(c) if c else %22-%22\n+%5D%0A%0A    def reservar(self, id: str, telefone: int, index: int) -%3E bool:%0A        return%0A%0A    def cancelar(id: str) -%3E bool:%0A        return%0A%0A    def getAssentos(self):%0A        c = self.assentos%0A        return c%0A%0A    def __str__(self):%0A        assento = (%22-----%22 if x is None else str(x)\n  for \n-c\n+x\n  in \n@@ -643,13 +643,35 @@\n tos)\n- + %22%5D\n+%0A        return f%22%7Bassento%7D\n %22%0A%0A%0A\n@@ -686,9 +686,9 @@\n ala(\n-5\n+1\n )%0Apr\n",
+            "lines": "31"
+        },
+        {
+            "label": "2025-11-06_11-12-47",
+            "content": "@@ -503,246 +503,4 @@\n la)%0A\n-%0A%0Adef main():%0A    sala: Sala %7C None = None%0A    while True:%0A        line = input()%0A        print(%22$%22 + line)%0A        args = line.split(%22 %22)%0A%0A        if args%5B0%5D == %22end%22:%0A            break%0A%0A        if args%5B0%5D == %22show%22:%0A            print(sala)%0A\n",
+            "lines": "20"
+        },
+        {
+            "label": "2025-11-06_11-14-12",
+            "content": "@@ -472,16 +472,45 @@\n + %22%5D%22%0A%0A%0A\n+sala = Sala(5)%0Aprint(sala)%0A%0A%0A\n def main\n",
+            "lines": "34"
+        },
+        {
+            "label": "2025-11-06_11-14-45",
+            "content": "@@ -496,17 +496,28 @@\n sala\n- =\n+:\n  Sala\n-()\n+ %7C None = None\n %0A   \n",
+            "lines": "30"
+        },
+        {
+            "label": "2025-11-06_11-15-27",
+            "content": "@@ -693,87 +693,16 @@\n     \n-if sala:%0A                print(sala)%0A            else:%0A                print(%22%5B%5D%22\n+print(sala\n )%0A\n",
+            "lines": "30"
+        },
+        {
+            "label": "2025-11-06_11-16-30",
+            "content": "@@ -776,13 +776,4 @@\n %5D%22)%0A\n-%0A%0Amain()%0A\n",
+            "lines": "33"
+        },
+        {
+            "label": "2025-11-06_11-16-41",
+            "content": "@@ -496,28 +496,17 @@\n sala\n-:\n+ =\n  Sala\n- %7C None = None\n+()\n %0A   \n",
+            "lines": "36"
+        },
+        {
+            "label": "2025-11-06_11-17-06",
+            "content": "@@ -662,95 +662,8 @@\n ak%0A%0A\n-        if args%5B0%5D == %22init%22:%0A            c = int(args%5B1%5D)%0A            sala = Sala(c)%0A%0A\n     \n",
+            "lines": "36"
+        },
+        {
+            "label": "2025-11-06_11-18-44",
+            "content": "@@ -370,847 +370,8 @@\n )%5D%0A%0A\n-    def verificar(self, index: int) -%3E bool:%0A        if index %3E len(self.assentos):%0A            return False%0A        if index %3E= 0:%0A            return True%0A%0A    def procurar(self, name: str) -%3E int:%0A        for c, cliente in enumerate(self.assentos):%0A            if cliente is not None and cliente.id == name:%0A                return c%0A            return -1%0A%0A    def reservar(self, id: str, telefone: int, index: int) -%3E bool:%0A        if not self.verificar(index):%0A            print(%22fail: indice invalido%22)%0A            return False%0A        if self.procurar(id) != -1:%0A            print(%22fail: cliente ja esta na sala%22)%0A            return False%0A        if self.assentos%5Bindex%5D is not None:%0A            print(%22fail: cadeira ja esta ocupada%22)%0A            return False%0A        self.assentos%5Bindex%5D = Cliente(id, telefone)%0A        return True%0A%0A\n     \n@@ -749,166 +749,8 @@\n c)%0A%0A\n-        if args%5B0%5D == %22reserve%22:%0A            i = str(args%5B1%5D)%0A            t = int(args%5B2%5D)%0A            ind = int(args%5B3%5D)%0A            sala = Sala(i, t, ind)%0A%0A\n     \n",
+            "lines": "40"
+        },
+        {
+            "label": "2025-11-11_09-38-29",
+            "content": "@@ -1726,17 +1726,15 @@\n sala\n-.reservar\n+ = Sala\n (i, \n",
+            "lines": "71"
+        },
+        {
+            "label": "2025-11-11_09-40-29",
+            "content": "@@ -859,26 +859,23 @@\n il: \n-cadeira nao existe\n+indice invalido\n %22)%0A \n@@ -980,15 +980,13 @@\n ta n\n-o cinem\n+a sal\n a%22)%0A\n@@ -1209,58 +1209,8 @@\n ue%0A%0A\n-    def cancelar(self, id: str):%0A%0A        return%0A%0A\n     \n",
+            "lines": "71"
+        },
+        {
+            "label": "2025-11-11_11-13-07",
+            "content": "@@ -1202,32 +1202,82 @@\n    return True%0A%0A\n+    def cancelar(self, id: str):%0A%0A        return%0A%0A\n     def __str__(\n",
+            "lines": "75"
+        },
+        {
+            "label": "2025-11-11_15-40-31",
+            "content": "@@ -1214,218 +1214,8 @@\n ue%0A%0A\n-    def cancelar(self, id: str):%0A        c = self.procurar(id)%0A        if self.procurar == -1:%0A            print(%22fail: nao tem ninguem%22)%0A            return%0A        self.assentos%5Bc%5D = None%0A        return True%0A%0A\n     \n",
+            "lines": "71"
+        },
+        {
+            "label": "2025-11-11_15-53-27",
+            "content": "@@ -1202,32 +1202,242 @@\n    return True%0A%0A\n+    def cancelar(self, id: str):%0A        c = self.procurar(id)%0A        if self.procurar == -1:%0A            print(%22fail: nao tem ninguem%22)%0A            return%0A        self.assentos%5Bc%5D = None%0A        return True%0A%0A\n     def __str__(\n",
+            "lines": "79"
+        },
+        {
+            "label": "2025-11-11_15-55-07",
+            "content": "@@ -577,17 +577,17 @@\n     for \n-i\n+c\n , client\n@@ -699,17 +699,17 @@\n  return \n-i\n+c\n %0A       \n",
+            "lines": "71"
+        },
+        {
+            "label": "2025-11-11_16-37-27",
+            "content": "@@ -1214,227 +1214,8 @@\n ue%0A%0A\n-    def cancelar(self, id: str):%0A        c = self.procurar(id)%0A        if self.assentos%5Bc%5D is None:%0A            print(%22fail: nao ha ninuem%22)%0A            return False%0A        self.assentos%5Bc%5D = None%0A        return True%0A%0A\n     \n",
+            "lines": "71"
+        },
+        {
+            "label": "2025-11-11_16-40-55",
+            "content": "@@ -1812,101 +1812,8 @@\n c)%0A%0A\n-        if args%5B0%5D == %22cancel%22:%0A            id = str(args%5B1%5D)%0A            sala.cancelar(id)%0A%0A\n     \n",
+            "lines": "79"
+        },
+        {
+            "label": "2025-11-11_16-42-57",
+            "content": "@@ -1293,22 +1293,27 @@\n elf.\n-procurar == -1\n+assentos%5Bc%5D is None\n :%0A  \n",
+            "lines": "83"
+        },
+        {
+            "label": "2025-11-11_16-48-34",
+            "content": "@@ -1835,16 +1835,46 @@\n ancel%22:%0A\n+            id = str(args%5B1%5D)%0A\n         \n@@ -1891,23 +1891,18 @@\n ancelar(\n-args%5B1%5D\n+id\n )%0A%0A     \n",
+            "lines": "83"
+        },
+        {
+            "label": "2025-11-11_16-52-08",
+            "content": "@@ -1364,16 +1364,22 @@\n   return\n+ False\n %0A       \n@@ -1417,16 +1417,21 @@\n   return\n+ True\n %0A%0A    de\n@@ -1861,28 +1861,24 @@\n ancelar(\n-str(\n args%5B1%5D)\n )%0A%0A     \n@@ -1869,17 +1869,16 @@\n args%5B1%5D)\n-)\n %0A%0A      \n",
+            "lines": "82"
+        },
+        {
+            "label": "2025-11-11_16-55-03",
+            "content": "@@ -1346,16 +1346,35 @@\n inuem%22)%0A\n+            return%0A\n         \n@@ -1396,16 +1396,31 @@\n %5D = None\n+%0A        return\n %0A%0A    de\n",
+            "lines": "82"
+        },
+        {
+            "label": "2025-11-11_17-02-24",
+            "content": "@@ -1241,24 +1241,16 @@\n id: str)\n- -%3E bool\n :%0A      \n@@ -1350,33 +1350,8 @@\n m%22)%0A\n-            return False%0A\n     \n@@ -1377,36 +1377,16 @@\n %5D = None\n-%0A        return True\n %0A%0A    de\n",
+            "lines": "80"
+        },
+        {
+            "label": "2025-11-11_17-02-59",
+            "content": "@@ -1342,34 +1342,21 @@\n il: \n-cliente nap esta no c\n+nao ha n\n in\n+u\n em\n-a\n %22)%0A \n",
+            "lines": "82"
+        },
+        {
+            "label": "2025-11-11_17-06-22",
+            "content": "@@ -705,24 +705,28 @@\n n i%0A        \n+    \n return -1%0A%0A \n@@ -1348,17 +1348,17 @@\n iente na\n-o\n+p\n  esta no\n",
+            "lines": "82"
+        },
+        {
+            "label": "2025-11-11_17-08-30",
+            "content": "@@ -1288,17 +1288,29 @@\n      if \n-c\n+self.procurar\n  == -1:%0A\n",
+            "lines": "82"
+        },
+        {
+            "label": "2025-11-11_17-12-33",
+            "content": "class Cliente:\n    def __init__(self, id: str, telefone: int):\n        self.id: str = id\n        self.telefone: int = telefone\n\n    def __str__(self):\n        return f\"{self.id}:{self.telefone}\"\n\n\nclass Sala:\n    def __init__(self, capacidade: int):\n        self.capacidade: int = capacidade\n        self.assentos: list[Cliente | None] = [None for _ in range(capacidade)]\n\n    def verificar(self, index: int) -> bool:\n        if index > len(self.assentos):\n            return False\n        if index >= 0:\n            return True\n\n    def procurar(self, name: str) -> int:\n        for i, cliente in enumerate(self.assentos):\n            if cliente is not None and cliente.id == name:\n                return i\n        return -1\n\n    def reservar(self, id: str, telefone: int, index: int) -> bool:\n        if not self.verificar(index):\n            print(\"fail: cadeira nao existe\")\n            return False\n        if self.procurar(id) != -1:\n            print(\"fail: cliente ja esta no cinema\")\n            return False\n        if self.assentos[index] is not None:\n            print(\"fail: cadeira ja esta ocupada\")\n            return False\n        self.assentos[index] = Cliente(id, telefone)\n        return True\n\n    def cancelar(self, id: str) -> bool:\n        c = self.procurar(id)\n        if c == -1:\n            print(\"fail: cliente nao esta no cinema\")\n            return False\n        self.assentos[c] = None\n        return True\n\n    def __str__(self):\n        return \"[\" + \" \".join(str(c) if c else \"-\" for c in self.assentos) + \"]\"\n\n\ndef main():\n    sala: Sala | None = None\n    while True:\n        line = input()\n        print(\"$\" + line)\n        args = line.split(\" \")\n\n        if args[0] == \"end\":\n            break\n\n        if args[0] == \"init\":\n            c = int(args[1])\n            sala = Sala(c)\n\n        if args[0] == \"cancel\":\n            sala.cancelar(str(args[1]))\n\n        if args[0] == \"reserve\":\n            i = str(args[1])\n            t = int(args[2])\n            ind = int(args[3])\n            sala.reservar(i, t, ind)\n\n        if args[0] == \"show\":\n            if sala:\n                print(sala)\n            else:\n                print(\"[]\")\n\n\nmain()\n",
+            "lines": "82"
+        }
+    ]
+}
